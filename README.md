@@ -20,8 +20,58 @@ Implementation using Python code
 Testing the server and client 
 
 ## PROGRAM:
+server.py
+```
+import socket
+
+# Create a TCP/IP socket
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Bind the socket to an address and port
+server_socket.bind(('localhost', 12345))
+server_socket.listen(1)
+
+print("Server is listening on port 12345...")
+
+# Wait for a connection
+conn, addr = server_socket.accept()
+print(f"Connected by {addr}")
+
+while True:
+    data = conn.recv(1024)
+    if not data:  # If no data, client closed connection
+        break
+    print(f"Received from client: {data.decode()}")
+    conn.sendall(data)  # Echo back the same data
+
+conn.close()
+```
+client.py
+```
+import socket
+
+# Create a TCP/IP socket
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Connect to the server
+client_socket.connect(('localhost', 12345))
+
+while True:
+    msg = input("Enter message (type 'exit' to quit): ")
+    if msg.lower() == 'exit':
+        break
+    client_socket.sendall(msg.encode())
+    data = client_socket.recv(1024)
+    print(f"Echo from server: {data.decode()}")
+
+client_socket.close()
+```
 
 ## OUTPUT:
+
+![s b](https://github.com/user-attachments/assets/b6e75ede-4f3a-470f-bb82-37a9d6990b30)
+
+![c b](https://github.com/user-attachments/assets/a4309081-a46b-456b-99f7-5d2f55048f76)
 
 ## RESULT:
 The program is executed successfully
