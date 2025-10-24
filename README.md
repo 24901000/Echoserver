@@ -69,9 +69,7 @@ client_socket.close()
 
 ## OUTPUT:
 
-![s b](https://github.com/user-attachments/assets/b6e75ede-4f3a-470f-bb82-37a9d6990b30)
-
-![c b](https://github.com/user-attachments/assets/a4309081-a46b-456b-99f7-5d2f55048f76)
+![alt text](<Screenshot 2025-10-24 142422.png>)
 
 ## RESULT:
 The program is executed successfully
