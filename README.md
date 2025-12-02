@@ -20,6 +20,7 @@ Implementation using Python code
 Testing the server and client 
 
 ## PROGRAM:
+```
 Server code
 
 
@@ -45,7 +46,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 break
             conn.sendall(data)
 
-
+```
+```
 Client Code:
 # echo-client.py
 
@@ -65,7 +67,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 
 print(f"Received {data!r}")
 
-
+```
 ## OUTPUT:
 ![alt text](<Screenshot 2025-12-02 115923.png>)
 
